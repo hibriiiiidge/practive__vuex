@@ -6,9 +6,11 @@
 
 <script>
 import Counter from './components/Counter.vue'
+import store from './store.js'
 
 export default {
   name: 'app',
+  store,
   components: {
       Counter
   }
