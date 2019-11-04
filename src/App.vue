@@ -1,24 +1,16 @@
 <template>
   <div id="app">
-    <div>
-      {{ count }}
-    </div>
-    <button @click="increment">count up</button>
+    <counter></counter>
   </div>
 </template>
 
 <script>
+import Counter from './components/Counter.vue'
+
 export default {
   name: 'app',
-  data() {
-    return {
-      count: 0
-    }
-  },
-  methods: {
-    increment () {
-      this.count++
-    }
+  components: {
+      Counter
   }
 }
 </script>
