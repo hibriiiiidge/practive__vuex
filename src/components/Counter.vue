@@ -18,13 +18,13 @@ export default {
   },
   methods: {
     ...mapMutations([
-      // this.increment() が　this.$store.commit('increment')　にマッピング
+      // this.increment() が this.$store.commit('increment')にマッピング
       'increment'
     ]),
     add() {
       // this.$store.commit('increment')
       this.increment()
-      this.$store.dispatch('addAsync', { amount: 1000 })
+      this.$store.dispatch('incrementAsync')
     }
   }
 }
