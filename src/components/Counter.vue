@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations, mapGetters } from 'vuex';
 import { mapActions } from 'vuex';
 
 export default {
@@ -20,9 +20,17 @@ export default {
     ...mapState([
       "count"
     ]),
+    // countClass() {
+    //   return {
+    //     'blue': this.$store.getters.isPositive,
+    //   }
+    // }
+    ...mapGetters([
+      'isPositive'
+    ]),
     countClass() {
       return {
-        'blue': this.$store.getters.isPositive,
+        'blue': this.isPositive
       }
     }
   },
