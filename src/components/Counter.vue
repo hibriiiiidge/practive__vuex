@@ -1,20 +1,29 @@
 <template>
   <div>
     <div>
-      {{ count }}
+      {{ showCounter }}
     </div>
     <button @click="add">count up</button>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+// import { mapState, mapMutations } from 'vuex';
+import { mapMutations } from 'vuex';
+
 
 export default {
   computed: {
-    ...mapState([
-      "count"
-    ])
+    // this.count が store.state.count にマッピング
+    // count () {
+    //   return store.state.count
+    // }
+    // ...mapState([
+    //   "count"
+    // ]),
+    showCounter() {
+      return this.$store.getters.countWithSuffix
+    }
   },
   methods: {
     ...mapMutations([
