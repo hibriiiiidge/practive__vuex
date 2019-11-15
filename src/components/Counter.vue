@@ -17,14 +17,15 @@ export default {
     ])
   },
   methods: {
-    // add () {
-    //   this.$store.commit('increment')
-    // }
     ...mapMutations([
       'increment'
     ]),
     add() {
       this.increment()
+      this.$store.dispatch('addAsync',
+      {
+        amount: 1000
+      })
     }
   }
 }

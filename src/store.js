@@ -10,9 +10,19 @@ export default new Vuex.Store({
   mutations: {
     increment(state) {
       state.count++
+    },
+    add(state, amount) {
+      state.count += amount
     }
   },
   actions: {
-
+    addAsync({ commit }, payload){
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit('add', payload.amount)
+          resolve()
+        }, 1000)
+      })
+    }
   }
 })
