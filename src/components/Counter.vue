@@ -1,16 +1,15 @@
 <template>
   <div>
     <div>
-      {{ showCounter }}
+      {{ count }}
     </div>
     <button @click="add">count up</button>
   </div>
 </template>
 
 <script>
-// import { mapState, mapMutations } from 'vuex';
-import { mapMutations } from 'vuex';
-
+import { mapState, mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   computed: {
@@ -18,22 +17,24 @@ export default {
     // count () {
     //   return store.state.count
     // }
-    // ...mapState([
-    //   "count"
-    // ]),
-    showCounter() {
-      return this.$store.getters.countWithSuffix
-    }
+    ...mapState([
+      "count"
+    ]),
   },
   methods: {
     ...mapMutations([
       // this.increment() が this.$store.commit('increment')にマッピング
       'increment'
     ]),
+    ...mapActions([
+      // this.addAsync() が this.$store.dispatch('addAsync')にマッピング
+      'addAsync'
+    ]),
     add() {
       // this.$store.commit('increment')
       this.increment()
-      this.$store.dispatch('incrementAsync')
+      // this.$store.dispatch('addAsync', { amount: 1000 })
+      this.addAsync({ amount: 1000 })
     }
   }
 }
