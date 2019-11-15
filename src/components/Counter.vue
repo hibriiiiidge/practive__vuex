@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   computed: {
@@ -17,8 +17,14 @@ export default {
     ])
   },
   methods: {
-    add () {
-      this.$store.commit('increment')
+    // add () {
+    //   this.$store.commit('increment')
+    // }
+    ...mapMutations([
+      'increment'
+    ]),
+    add() {
+      this.increment()
     }
   }
 }

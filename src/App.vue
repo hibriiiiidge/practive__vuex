@@ -12,7 +12,7 @@ export default {
   name: 'app',
   store,
   components: {
-      Counter
+    Counter
   }
 }
 </script>
