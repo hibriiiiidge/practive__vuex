@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      {{ count }}
+      <p :class="countClass">{{ count }}</p>
     </div>
     <button @click="add">count up</button>
   </div>
@@ -20,6 +20,11 @@ export default {
     ...mapState([
       "count"
     ]),
+    countClass() {
+      return {
+        'blue': this.$store.getters.isPositive,
+      }
+    }
   },
   methods: {
     ...mapMutations([
@@ -41,5 +46,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .blue {
+    color: blue;
+  }
 </style>
