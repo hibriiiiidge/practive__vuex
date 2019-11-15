@@ -17,17 +17,17 @@ export default {
     // count () {
     //   return store.state.count
     // }
-    ...mapState([
-      "count"
-    ]),
+    ...mapState({
+      count: state => state.counter.count
+    }),
     // countClass() {
     //   return {
     //     'blue': this.$store.getters.isPositive,
     //   }
     // }
-    ...mapGetters([
-      'isPositive'
-    ]),
+    ...mapGetters({
+      isPositive: 'counter/isPositive',
+    }),
     countClass() {
       return {
         'blue': this.isPositive
@@ -35,14 +35,16 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([
+    ...mapMutations({
       // this.increment() が this.$store.commit('increment')にマッピング
-      'increment'
-    ]),
-    ...mapActions([
+      // 'increment'
+      increment: 'counter/increment',
+    }),
+    ...mapActions({
       // this.addAsync() が this.$store.dispatch('addAsync')にマッピング
-      'addAsync'
-    ]),
+      // 'addAsync'
+      addAsync: 'counter/addAsync'
+    }),
     add() {
       // this.$store.commit('increment')
       this.increment()
