@@ -6,6 +6,7 @@
       :class="'input-form--min' + [isBudgetActive ? '--inputted' : '' ]"
       :value=budget
       :placeholder=placeholder
+      @input=onInput
       @focus=onFocusBudget
       @blur=onBlurBudget
     />
@@ -35,6 +36,9 @@ export default {
     ]),
   },
   methods: {
+    onInput(e) {
+      this.$emit('input', e.target.value)
+    },
     onFocusBudget() {
       this.$emit('focus')
     },

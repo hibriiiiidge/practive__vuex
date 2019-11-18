@@ -23,6 +23,9 @@ export default new Vuex.Store({
     add (state, amount) {
       state.count += amount
     },
+    setBudget(state, budget) {
+      state.budget = budget
+    }
   },
   actions: {
     addAsync({ commit }, payload){

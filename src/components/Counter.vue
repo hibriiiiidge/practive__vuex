@@ -6,6 +6,7 @@
     <button @click="add">count up</button>
     <search-input-group
       :isBudgetActive=isBudgetActive
+      @input=inputBudget
       @focus=focusBudget
       @blur=blurBudget
     />
@@ -27,7 +28,7 @@ export default {
   },
   computed: {
     ...mapState([
-      "count",
+      "count", "budget"
     ]),
     ...mapGetters([
       "isPositive"
@@ -40,7 +41,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      "increment"
+      "increment", "setBudget"
     ]),
     ...mapActions([
       "addAsync"
@@ -48,6 +49,9 @@ export default {
     add() {
       this.increment()
       this.addAsync({ amount: 1000 })
+    },
+    inputBudget(budget) {
+      this.setBudget(budget);
     },
     focusBudget() {
       this.isBudgetActive = true;

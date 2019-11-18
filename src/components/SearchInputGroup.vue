@@ -4,6 +4,7 @@
       :isBudgetActive=isBudgetActive
       :budget=budget
       :budgetType=budgetType.lower
+      @input=inputBudget
       @focus=focusBudget
       @blur=blurBudget
     />
@@ -46,9 +47,9 @@ export default {
     ]),
   },
   methods: {
-    // inputBudget(value, budgetType) {
-    //   this.$emit('input', value, budgetType)
-    // },
+    inputBudget(value) {
+      this.$emit('input', value)
+    },
     focusBudget() {
       this.$emit('focus')
     },
