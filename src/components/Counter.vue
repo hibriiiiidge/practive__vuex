@@ -4,17 +4,30 @@
       <p :class="countClass">{{ count }}</p>
     </div>
     <button @click="add">count up</button>
+    <search-input-group
+      :isBudgetActive=isBudgetActive
+      @focus=focusBudget
+      @blur=blurBudget
+    />
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations, mapGetters } from 'vuex';
-import { mapActions } from 'vuex';
+import { mapState, mapMutations, mapGetters, mapActions } from 'vuex';
+import SearchInputGroup from './SearchInputGroup'
 
 export default {
+  components: {
+    SearchInputGroup
+  },
+  data() {
+    return {
+      isBudgetActive: false,
+    }
+  },
   computed: {
     ...mapState([
-      "count"
+      "count",
     ]),
     ...mapGetters([
       "isPositive"
@@ -35,7 +48,13 @@ export default {
     add() {
       this.increment()
       this.addAsync({ amount: 1000 })
-    }
+    },
+    focusBudget() {
+      this.isBudgetActive = true;
+    },
+    blurBudget(budget) {
+      this.isBudgetActive = budget.length !== 0;
+    },
   }
 }
 </script>
