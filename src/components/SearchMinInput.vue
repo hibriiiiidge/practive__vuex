@@ -18,10 +18,6 @@ import { mapState } from 'vuex';
 
 export default {
   props: {
-    isBudgetActive: {
-      type: Boolean,
-      default: false
-    },
     budgetType: {
       type: Number,
       default: 1
@@ -32,7 +28,7 @@ export default {
       return this.budgetType === 0 ? '下限無し' : '上限無し'
     },
     ...mapState([
-      "budget",
+      "budget", "isBudgetActive"
     ]),
   },
   methods: {
@@ -51,7 +47,7 @@ export default {
 
 
 <style scoped>
-  .input-form--min--inputted {
+  .input-form--min {
     background: red;
   }
 </style>

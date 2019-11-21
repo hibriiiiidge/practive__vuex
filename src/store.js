@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     count: 0,
-    budget: "100"
+    budget: "100",
+    isBudgetActive: true
   },
   getters: {
     isPositive: state => {
@@ -25,6 +26,12 @@ export default new Vuex.Store({
     },
     setBudget(state, budget) {
       state.budget = budget
+    },
+    setFocusBudget(state) {
+      state.isBudgetActive = true
+    },
+    setBlurBudget(state, budget) {
+      state.isBudgetActive = budget.length !== 0
     }
   },
   actions: {
