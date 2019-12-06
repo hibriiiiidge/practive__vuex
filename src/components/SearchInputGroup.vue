@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 import SearchMinInput from './SearchMinInput'
 
 export default {
@@ -33,15 +33,18 @@ export default {
     ]),
   },
   methods: {
-    inputBudget(value) {
-      this.$emit('input', value)
+    ...mapMutations([
+      "setBudget", "setFocusBudget", "setBlurBudget"
+    ]),
+    inputBudget(budget) {
+      this.setBudget(budget);
     },
     focusBudget() {
-      this.$emit('focus')
+      this.setFocusBudget();
     },
-    blurBudget(value) {
-      this.$emit('blur', value)
-    }
-  },
+    blurBudget(budget) {
+      this.setBlurBudget(budget);
+    },
+  }
 }
 </script>

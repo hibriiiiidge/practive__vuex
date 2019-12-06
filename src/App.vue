@@ -1,18 +1,15 @@
 <template>
-  <div id="app">
-    <counter></counter>
+  <div>
+    <p>
+      <router-link to="/counter">
+        counter
+      </router-link>
+    </p>
+    <p>
+      <router-link to="/vuex">
+        vuex
+      </router-link>
+    </p>
+    <router-view></router-view>
   </div>
 </template>
-
-<script>
-import Counter from './components/Counter.vue'
-import store from './store.js'
-
-export default {
-  name: 'app',
-  store,
-  components: {
-    Counter
-  }
-}
-</script>
