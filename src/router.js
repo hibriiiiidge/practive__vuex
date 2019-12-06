@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Counter from './components/Counter.vue';
+import Counter1 from './components/Counter1.vue';
+import Counter2 from './components/Counter2.vue';
 import SearchInputGroup from './components/SearchInputGroup.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/counter', component: Counter },
+    { path: '/counter1', component: Counter1 },
+    { path: '/counter2', component: Counter2 },
     { path: '/vuex', component: SearchInputGroup },
 ];
 
