@@ -2,12 +2,12 @@
   <div>
     <p>
       <router-link to="/counter1">
-        counter with map helper
+        counter1
       </router-link>
     </p>
     <p>
       <router-link to="/counter2">
-        counter without map helper
+        counter2
       </router-link>
     </p>
     <p>

@@ -36,10 +36,9 @@ export default new Vuex.Store({
   },
   actions: {
     addAsync({ commit }, payload){
-      return new Promise((resolve) => {
+      return new Promise(() => {
         setTimeout(() => {
           commit('add', payload.amount)
-          resolve()
         }, 1000)
       })
     }
