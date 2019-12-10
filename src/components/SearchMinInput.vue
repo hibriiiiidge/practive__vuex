@@ -1,11 +1,10 @@
 <template>
   <div>
-    <span class="earch-form__yen-mark">¥</span>
+    <span>¥</span>
     <input
       type="number"
       :class="'input-form--min' + [isBudgetActive ? '--inputted' : '' ]"
       :value=budget
-      :placeholder=placeholder
       @input=onInput
       @focus=onFocusBudget
       @blur=onBlurBudget
@@ -17,16 +16,7 @@
 import { mapState } from 'vuex';
 
 export default {
-  props: {
-    budgetType: {
-      type: Number,
-      default: 1
-    }
-  },
   computed: {
-    placeholder() {
-      return this.budgetType === 0 ? '下限無し' : '上限無し'
-    },
     ...mapState([
       "budget", "isBudgetActive"
     ]),

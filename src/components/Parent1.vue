@@ -1,9 +1,8 @@
 <template>
   <div>
-    <search-min-input
+    <children1
       :isBudgetActive=isBudgetActive
       :budget=budget
-      :budgetType=budgetType.lower
       @input=inputBudget
       @focus=focusBudget
       @blur=blurBudget
@@ -13,19 +12,11 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
-import SearchMinInput from './SearchMinInput'
+import Children1 from './Children1'
 
 export default {
   components: {
-    SearchMinInput
-  },
-  data() {
-    return {
-      budgetType: {
-        "lower": 0,
-        "higher": 1
-      }
-    }
+    Children1,
   },
   computed: {
     ...mapState([
