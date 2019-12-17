@@ -1,19 +1,19 @@
 <template>
-  <div class="children">
+  <div class="child">
     <div>子</div>
     価格項目
-    <search-min-input
+    <grand-child1
       @input=onInput
     />
   </div>
 </template>
 
 <script>
-import SearchMinInput from './SearchMinInput'
+import GrandChild1 from './GrandChild1'
 
 export default {
   components: {
-    SearchMinInput
+    GrandChild1
   },
   methods: {
     onInput(value) {
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-.children {
+.child {
   border: 1px solid blue;
 }
 </style>

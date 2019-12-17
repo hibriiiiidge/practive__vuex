@@ -1,7 +1,7 @@
 <template>
   <div class="parent">
     <dir>親</dir>
-    <children1
+    <child1
       :isBudgetActive=isBudgetActive
       :budget=budget
       @input=inputBudget
@@ -11,11 +11,11 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
-import Children1 from './Children1'
+import Child1 from './Child1'
 
 export default {
   components: {
-    Children1,
+    Child1,
   },
   computed: {
     ...mapState([
