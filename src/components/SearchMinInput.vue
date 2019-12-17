@@ -1,14 +1,16 @@
 <template>
-  <div>
+  <div class="grandchild">
+    <div>孫</div>
     <span>¥</span>
     <input
       type="number"
       :class="'input-form--min' + [isBudgetActive ? '--inputted' : '' ]"
       :value=budget
       @input=onInput
-      @focus=onFocusBudget
-      @blur=onBlurBudget
     />
+    <p>
+      {{ budget }}
+    </p>
   </div>
 </template>
 
@@ -25,19 +27,16 @@ export default {
     onInput(e) {
       this.$emit('input', e.target.value)
     },
-    onFocusBudget() {
-      this.$emit('focus')
-    },
-    onBlurBudget(e) {
-      this.$emit('blur', e.target.value)
-    }
   }
 }
 </script>
 
-
 <style scoped>
-  .input-form--min {
-    background: red;
-  }
+.grandchild {
+  border: 1px solid green;
+}
+
+.input-form--min {
+  background: red;
+}
 </style>

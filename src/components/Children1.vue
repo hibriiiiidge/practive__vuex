@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="children">
+    <div>子</div>
+    価格項目
     <search-min-input
       @input=onInput
-      @focus=onFocusBudget
-      @blur=onBlurBudget
     />
   </div>
 </template>
@@ -19,12 +19,12 @@ export default {
     onInput(value) {
       this.$emit('input', value)
     },
-    onFocusBudget() {
-      this.$emit('focus')
-    },
-    onBlurBudget(value) {
-      this.$emit('blur', value)
-    }
   }
 }
 </script>
+
+<style>
+.children {
+  border: 1px solid blue;
+}
+</style>

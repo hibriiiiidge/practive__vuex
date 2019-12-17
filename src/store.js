@@ -25,14 +25,9 @@ export default new Vuex.Store({
       state.count += amount
     },
     setBudget(state, budget) {
+      state.isBudgetActive = budget.length !== 0
       state.budget = budget
     },
-    setFocusBudget(state) {
-      state.isBudgetActive = true
-    },
-    setBlurBudget(state, budget) {
-      state.isBudgetActive = budget.length !== 0
-    }
   },
   actions: {
     addAsync({ commit }, payload){

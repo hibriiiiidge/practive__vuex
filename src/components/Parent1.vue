@@ -1,11 +1,10 @@
 <template>
-  <div>
+  <div class="parent">
+    <dir>親</dir>
     <children1
       :isBudgetActive=isBudgetActive
       :budget=budget
       @input=inputBudget
-      @focus=focusBudget
-      @blur=blurBudget
     />
   </div>
 </template>
@@ -25,17 +24,17 @@ export default {
   },
   methods: {
     ...mapMutations([
-      "setBudget", "setFocusBudget", "setBlurBudget"
+      "setBudget"
     ]),
     inputBudget(budget) {
       this.setBudget(budget);
     },
-    focusBudget() {
-      this.setFocusBudget();
-    },
-    blurBudget(budget) {
-      this.setBlurBudget(budget);
-    },
   }
 }
 </script>
+
+<style scoped>
+.parent {
+  border: 1px solid red;
+}
+</style>
