@@ -16,6 +16,11 @@
       </router-link>
     </p>
     <p>
+      <router-link to="/vuex2">
+        vuex2
+      </router-link>
+    </p>
+    <p>
       <router-link to="/vuex3">
         vuex3
       </router-link>

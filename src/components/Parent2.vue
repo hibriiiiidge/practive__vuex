@@ -1,27 +1,23 @@
 <template>
   <div class="parent">
-    <dir>親</dir>
-    <child1
+    <dir>親2</dir>
+    <child2
       @input=inputBudget
     />
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-import Child1 from './Child1'
+import Child2 from './Child2'
 
 export default {
   components: {
-    Child1,
+    Child2,
   },
   methods: {
-    ...mapMutations([
-      "setBudget"
-    ]),
-    inputBudget(budget) {
-      this.setBudget(budget);
-    },
+    inputBudget(value) {
+      this.$store.commit('setBudget', value);
+    }
   }
 }
 </script>
